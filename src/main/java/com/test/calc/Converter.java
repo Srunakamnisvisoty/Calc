@@ -39,6 +39,8 @@ class Converter {
             return numbers.get(ten) + numbers.get(one);
         } else if (arabNumber % 10 == 0 && arabNumber != 0) {
             return numbers.get(arabNumber);
+        } else if (arabNumber == 0) {
+            throw new NumberFormatException("т.к. в римской системе отсутствует ноль");
         } else {
             throw new NumberFormatException("т.к. в римской системе нет отрицательных чисел");
         }
@@ -52,7 +54,7 @@ class Converter {
             }
         }
         if (num >= 11) {
-            throw new NumberFormatException("Некоректное число");
+            throw new NumberFormatException("т.к. можно вводить только целые числа в диапазоне от I до X");
         } else {
             return num;
         }

@@ -33,9 +33,12 @@ class LinePreparing {
     }
 
     private static void checkNumber(String[] source) {
-        if (Integer.parseInt(source[0]) > 10 || Integer.parseInt(source[0]) < 0 ||
-                Integer.parseInt(source[2]) > 10 ||Integer.parseInt(source[2]) < 0) {
-            throw new NumberFormatException("т.к. можно вводить только числа от 0 до 10");
+        if (Double.parseDouble(source[0]) % 1 != 0 || Double.parseDouble(source[2]) % 1 != 0 ) {
+            throw new NumberFormatException("т.к можно вводить только целые числа");
+        }
+        if (Integer.parseInt(source[0]) > 10 || Integer.parseInt(source[0]) < 1 ||
+                Integer.parseInt(source[2]) > 10 ||Integer.parseInt(source[2]) < 1) {
+            throw new NumberFormatException("т.к. можно вводить только числа от 1 до 10");
         }
     }
 
